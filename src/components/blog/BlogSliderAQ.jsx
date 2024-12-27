@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // CSS dosyasın
 
 import { useAllBlogQuery } from "../../store/apis/blogApi";
 
-const BlogSlider = () => {
+const BlogSliderAQ = () => {
     const { data: blogs, isLoading, error } = useAllBlogQuery();
     
     return (
@@ -75,4 +75,4 @@ const BlogSlider = () => {
 
 };
 
-export default BlogSlider;
+export default BlogSliderAQ;
