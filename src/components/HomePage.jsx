@@ -15,6 +15,7 @@ import RandomBLog from './blog/RandomBLog';
 import FollowingBLogs from './blog/FollowingBLogs';
 
 import BlogSliderAQ from './blog/BlogSliderAQ';
+import { NavLink } from 'react-router-dom';
 
 const HomePage = () => {
     const user = localStorage.getItem("user");
