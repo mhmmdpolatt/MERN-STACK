@@ -9,6 +9,7 @@ import { IoMdPerson } from "react-icons/io";
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -54,7 +55,7 @@ const Navbar = () => {
                 {/* Profil Butonu */}
 
                 {/* ADMİN LİNKLERİ */}
-                {user?.role=="admin" && (
+                {user?.role == "admin" && (
                     <div className="relative">
                         <button
                             onClick={() => setAdminDropdownOpen(!adminDropdownOpen)}
@@ -96,22 +97,22 @@ const Navbar = () => {
 
                 {/* Masaüstü Menü Linkleri */}
                 <div className="hidden md:flex gap-4 text-base font-medium text-white">
-                    <a href="/" className="hover:text-slate-800 transition duration-300">
+                    <NavLink to="/" activeClassName="text-slate-800" className="hover:text-white transition duration-300">
                         Ana Sayfa
-                    </a>
-                    <a href="/blogs" className="hover:text-slate-800 transition duration-300">
+                    </NavLink>
+                    <NavLink to="/blogs" activeClassName="text-slate-800" className="hover:text-white transition duration-300">
                         Kategoriler
-                    </a>
-                    <a href="/blog-add" className="hover:text-slate-800 transition duration-300">
+                    </NavLink>
+                    <NavLink to="/blog-add" activeClassName="text-slate-800" className="hover:text-white transition duration-300">
                         Blog Ekle
-                    </a>
+                    </NavLink>
 
                     {user ? (
                         <div className="flex items-center gap-3 text-sm text-white hover:scale-110">
-                            <a href={`/user/${user._id}`} className="flex items-center gap-1">
+                            <NavLink to={`/user/${user._id}`} activeClassName="text-slate-800" className="flex items-center gap-1">
                                 <IoMdPerson size={18} />
                                 <span>Merhaba, {user.username}</span>
-                            </a>
+                            </NavLink>
                             <button
                                 onClick={handleLogout}
                                 className="flex items-center gap-1 hover:text-red-600 transition duration-300"
@@ -121,14 +122,12 @@ const Navbar = () => {
                             </button>
                         </div>
                     ) : (
-                        <a
-                            href="/register"
-                            className="hover:text-purple-500 transition duration-300"
-                        >
+                        <NavLink to="/register" activeClassName="text-purple-500" className="hover:text-purple-500 transition duration-300">
                             Login/Sign
-                        </a>
+                        </NavLink>
                     )}
                 </div>
+
 
                 {/* Mobil Yan Menü */}
                 <div
