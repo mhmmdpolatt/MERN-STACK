@@ -3,9 +3,7 @@
   to = "/register"
   status = 200
 
-  from = "/login"
-  to = "/giris"
-  status = 200
+
 
   from = "/blog-add"
   to = "/blog-add"
