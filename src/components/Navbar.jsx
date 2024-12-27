@@ -10,7 +10,7 @@ import { IoMdPerson } from "react-icons/io";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -126,7 +126,7 @@ const Navbar = () => {
                             <NavLink to="/register" activeClassName="text-purple-500" className="hover:text-purple-500 transition duration-300">
                                 Login/Sign
                             </NavLink>
-                            <NavLink to="/register" activeClassName="text-purple-500" className="hover:text-purple-500 transition duration-300">
+                            <NavLink to="/login" activeClassName="text-purple-500" className="hover:text-purple-500 transition duration-300">
                                 Giriş
                             </NavLink>
                         </>
@@ -150,30 +150,33 @@ const Navbar = () => {
                         </button>
                     </div>
                     <div className="flex flex-col gap-4 p-4">
-                        <a
-                            href="/"
-                            className="hover:scale-110transition duration-300"
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) => `hover:scale-110 transition duration-300 ${isActive ? 'text-slate-800' : 'text-white'}`}
                         >
                             Ana Sayfa
-                        </a>
-                        <a
-                            href="/blogs"
-                            className="hover:scale-110transition duration-300"
+                        </NavLink>
+                        <NavLink
+                            to="/blogs"
+                            className={({ isActive }) => `hover:scale-110 transition duration-300 ${isActive ? 'text-slate-800' : 'text-white'}`}
                         >
                             Kategoriler
-                        </a>
-                        <a
-                            href="/blog-add"
-                            className="hover:scale-110 transition duration-300"
+                        </NavLink>
+                        <NavLink
+                            to="/blog-add"
+                            className={({ isActive }) => `hover:scale-110 transition duration-300 ${isActive ? 'text-slate-800' : 'text-white'}`}
                         >
                             Blog Ekle
-                        </a>
+                        </NavLink>
                         {user ? (
                             <div className="flex flex-col gap-3 text-sm text-gray-300">
-                                <a href={`/user/${user._id}`} className="flex items-center gap-1">
+                                <NavLink
+                                    to={`/user/${user._id}`}
+                                    className={({ isActive }) => `flex items-center gap-1 ${isActive ? 'text-gray-300' : 'text-white'}`}
+                                >
                                     <IoMdPerson size={18} />
                                     <span>Merhaba, {user.username}</span>
-                                </a>
+                                </NavLink>
                                 <button
                                     onClick={handleLogout}
                                     className="flex items-center gap-1 hover:text-red-400 transition duration-300"
@@ -183,16 +186,20 @@ const Navbar = () => {
                                 </button>
                             </div>
                         ) : (
-                            <div> <a
-                                href="/register"
-                                className="hover:text-purple-400 transition duration-300"
-                            >
-                                Kayıt Ol
-                            </a>
-                                <a href="/login">Giriş</a>
-
+                            <div>
+                                <NavLink
+                                    to="/register"
+                                    className={({ isActive }) => `hover:text-purple-400 transition duration-300 ${isActive ? 'text-purple-400' : 'text-white'}`}
+                                >
+                                    Kayıt Ol
+                                </NavLink>
+                                <NavLink
+                                    to="/login"
+                                    className="hover:text-purple-400 transition duration-300 text-white"
+                                >
+                                    Giriş
+                                </NavLink>
                             </div>
-
                         )}
                     </div>
                 </div>

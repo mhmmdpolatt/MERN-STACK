@@ -2,6 +2,7 @@ import React from 'react'
 import { useRegisterUserMutation } from '../../store/apis/userApi'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 // import { BLog } from "../../assets/blogging-backdrop-with-laptop-msaf9d67o4r5dl74.jpg";
 // import '../../user.css';
@@ -109,12 +110,13 @@ const UserRegister = () => {
                             />
                         </div>
 
-                        <span className='text-white'>Hesabınız Zaten Var mı <a href="/login" className='underline'> Giriş Yap</a></span>
+                        <span className='text-white'>Hesabınız Zaten Var mı <NavLink to="/login">Giriş Yap</NavLink></span>
 
                         <button
                             type="submit"
                             className="w-full mt-4 p-2 rounded-lg font-semibold text-white  bg-gradient-to-r from-slate-700 to-slate-950  transition duration-200 ease-in-out shadow-white shadow-sm hover:bg-slate-100"
                         >
+                            
                             Kayıt Ol
                         </button>
                     </form>
