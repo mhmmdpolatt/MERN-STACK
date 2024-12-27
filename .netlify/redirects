@@ -1,5 +1,18 @@
-/* /index.html 200
-/blog/:id /blogDetail.html 200
-/user/:id /profile.html 200
-/admin/users /fetchUser.html 200
-/* /404.html 404
+/register   /register   200
+/login   /login   200
+/blog-add   /blog-add   200
+/blog/:id   /blog/:id   200
+/user/:id   /user/:id   200
+/blogs   /blogs   200
+/home   /   200
+/profile/edit/:id   /profile/edit/:id   200
+/admin/users   /admin/users   200
+/admin/reports   /admin/reports   200
+/sikayet   /sikayet   200
+
+/* /index.html   200
+/blog/:id   /blogDetail.html   200
+/user/:id   /profile.html   200
+/admin/users   /fetchUser.html   200
+/* /404.html   404
+
