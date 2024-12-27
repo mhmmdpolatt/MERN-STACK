@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './partials/header';
-import BlogSlider from './blog/blogSlider';
+
 import GetBlog from './blog/getBlog';
 import ZiyaretEt from './partials/ZiyaretEt';
 import Footer from './partials/Footerr';
@@ -13,6 +13,7 @@ import NewPage from './blog/NewPage';
 import PopularBlogs from './blog/PopularBlogs';
 import RandomBLog from './blog/RandomBLog';
 import FollowingBLogs from './blog/FollowingBLogs';
+import BlogSlider from './blog/blogSlider';
 
 const HomePage = () => {
     const user = localStorage.getItem("user");
@@ -113,7 +114,7 @@ const HomePage = () => {
 
                 <section className='mt-8'>
 
-                    <BlogSlider />
+                    <BlogSlider/>
                 </section>
 
                 {/* Blog İçerikleri */}
