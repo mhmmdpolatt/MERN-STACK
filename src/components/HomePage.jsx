@@ -13,7 +13,8 @@ import NewPage from './blog/NewPage';
 import PopularBlogs from './blog/PopularBlogs';
 import RandomBLog from './blog/RandomBLog';
 import FollowingBLogs from './blog/FollowingBLogs';
-import BlogSlider from './blog/blogSlider';
+
+import BlogSliderAQ from './blog/BlogSliderAQ';
 
 const HomePage = () => {
     const user = localStorage.getItem("user");
@@ -114,7 +115,7 @@ const HomePage = () => {
 
                 <section className='mt-8'>
 
-                    <BlogSlider/>
+                    <BlogSliderAQ/>
                 </section>
 
                 {/* Blog İçerikleri */}
