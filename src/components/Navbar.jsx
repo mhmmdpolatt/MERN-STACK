@@ -1,19 +1,15 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import İcon from "../assets/icon.png"
+
 import { IoMdLogOut } from "react-icons/io";
 // import LogoutIcon from '../../icon';
 import { useDispatch } from 'react-redux'
 import { logout } from '../features/auth/authSlice';
 import { IoMdPerson } from "react-icons/io";
-import { MdFoodBank } from "react-icons/md";
-import { AiFillBulb } from "react-icons/ai";
-import { RiComputerFill } from "react-icons/ri";
-import { GiHealthPotion } from "react-icons/gi";
-import { useLocation } from 'react-router-dom';
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);

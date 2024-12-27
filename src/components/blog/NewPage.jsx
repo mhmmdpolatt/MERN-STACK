@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useAllBlogQuery, useGetCategoryQuery } from '../../store/apis/blogApi';
-import { useGetBlogQuery } from '../../store/apis/blogApi';
-import GetBlog from './getBlog';
+
 import { Link } from 'react-router-dom';
 import { MdFavoriteBorder } from "react-icons/md";
 import { FaRegComment } from "react-icons/fa";
-import BlogSlider from './blogSlider';
-import HomePage from '../HomePage';
+
 
 
 const NewPage = () => {

@@ -1,13 +1,10 @@
 import React from 'react'
 import { useGetFollowingBlogsQuery } from '../../store/apis/blogApi'
-import { useEffect } from 'react';
+
 import { Link } from 'react-router-dom';
 import { MdFavoriteBorder } from "react-icons/md";
 import { FaRegComment } from "react-icons/fa";
-import { BsCalendar2Date } from "react-icons/bs";
-import { CgCalendarDates } from "react-icons/cg";
-import { useGetCategoryQuery } from '../../store/apis/blogApi';
-import BlogSlider from './blogSlider';
+
 
 
 const FollowingBLogs = () => {

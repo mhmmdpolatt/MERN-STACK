@@ -3,10 +3,7 @@ import { useGetBlogQuery } from '../../store/apis/blogApi';
 import { Link } from 'react-router-dom';
 import { MdFavoriteBorder } from "react-icons/md";
 import { FaRegComment } from "react-icons/fa";
-import { BsCalendar2Date } from "react-icons/bs";
-import { CgCalendarDates } from "react-icons/cg";
-import { useGetCategoryQuery } from '../../store/apis/blogApi';
-import BlogSlider from './blogSlider';
+
 
 
 const GetBlog = () => {

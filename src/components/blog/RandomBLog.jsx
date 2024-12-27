@@ -4,10 +4,7 @@ import { useGetBlogQuery } from '../../store/apis/blogApi';
 import { Link } from 'react-router-dom';
 import { MdFavoriteBorder } from "react-icons/md";
 import { FaRegComment } from "react-icons/fa";
-import { BsCalendar2Date } from "react-icons/bs";
-import { CgCalendarDates } from "react-icons/cg";
-import { useGetCategoryQuery } from '../../store/apis/blogApi';
-import BlogSlider from './blogSlider';
+
 const RandomBLog = () => {
     const { data: randomCategories, isLoading: loadingRandom,error } = useGetBlogQuery({ categories: 'random', limit: 4 });
     console.log("RANDOM",useGetBlogQuery({ categories: 'random', limit: 4 }));

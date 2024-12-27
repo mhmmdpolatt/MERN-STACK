@@ -2,7 +2,7 @@ import React from 'react'
 import { useRegisterUserMutation } from '../../store/apis/userApi'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaGoogle } from "react-icons/fa";
+
 // import { BLog } from "../../assets/blogging-backdrop-with-laptop-msaf9d67o4r5dl74.jpg";
 // import '../../user.css';
 const UserRegister = () => {

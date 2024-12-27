@@ -3,7 +3,7 @@ import Header from './partials/header';
 
 import GetBlog from './blog/getBlog';
 import ZiyaretEt from './partials/ZiyaretEt';
-import Footer from './partials/Footerr';
+
 import { CiSearch } from "react-icons/ci";
 import { useState } from 'react';
 import { useEffect } from 'react';
