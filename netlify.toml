@@ -1,0 +1,44 @@
+[redirects]
+  from = "/register"
+  to = "/register"
+  status = 200
+
+  from = "/login"
+  to = "/login"
+  status = 200
+
+  from = "/blog-add"
+  to = "/blog-add"
+  status = 200
+
+  from = "/blog/:id"
+  to = "/blog/:id"
+  status = 200
+
+  from = "/user/:id"
+  to = "/user/:id"
+  status = 200
+
+  from = "/blogs"
+  to = "/"
+  status = 200
+
+  from = "/"
+  to = "/"
+  status = 200
+
+  from = "/profile/edit/:id"
+  to = "/profile/edit/:id"
+  status = 200
+
+  from = "/admin/users"
+  to = "/admin/users"
+  status = 200
+
+  from = "/admin/reports"
+  to = "/admin/reports"
+  status = 200
+
+  from = "/sikayet"
+  to = "/sikayet"
+  status = 200
