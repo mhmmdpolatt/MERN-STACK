@@ -183,7 +183,9 @@ const Navbar = () => {
                             >
                                 Kayıt Ol
                             </a>
-                                <a href="/login">Giriş</a></div>
+                                <a href="/login">Giriş</a>
+
+                            </div>
 
                         )}
                     </div>
