@@ -95,7 +95,9 @@ const HomePage = () => {
                                         <p className='text-center text-xs underline mx-auto pt-1'>Aramanızla Eşleşen {filteredData.length}  Sonuç</p>
                                         {filteredData?.map((blog) => (
                                             <div className='p-2 flex justify-around items-center border-w w-full hover:bg-slate-900 border-b border-white' key={blog._id}>
-                                                <a href={`/blog/${blog._id}`} className='text-[15px] p-2 '>{blog.title}</a>
+                                                <NavLink to={`/blog/${blog._id}`} className='text-[15px] p-2'>
+                                                    {blog.title}
+                                                </NavLink>
                                             </div>
                                         ))}
                                     </div>
@@ -115,7 +117,7 @@ const HomePage = () => {
 
                 <section className='mt-8'>
 
-                    <BlogSliderAQ/>
+                    <BlogSliderAQ />
                 </section>
 
                 {/* Blog İçerikleri */}

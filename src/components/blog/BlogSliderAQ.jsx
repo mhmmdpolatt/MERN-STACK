@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // CSS dosyasını unutmayın
+import { NavLink } from "react-router-dom";
 
 import { useAllBlogQuery } from "../../store/apis/blogApi";
 
@@ -52,7 +53,11 @@ const BlogSliderAQ = () => {
                             <h3
                                 className=" text-2xl md:text-4xl font-extrabold text-white mb-4 drop-shadow-lg"
                                 dangerouslySetInnerHTML={{
-                                    __html: `<a href="/blog/${blog._id}" class="hover:underline">${blog.title}</a>`,
+                                    __html: (
+                                        <NavLink to={`/blog/${blog._id}`} className="hover:underline">
+                                          {blog.title}
+                                        </NavLink>
+                                      ),
                                 }}
                             ></h3>
 

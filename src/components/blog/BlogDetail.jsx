@@ -181,7 +181,9 @@ const BlogDetail = () => {
             {/* Kullanıcı İsmi ve Tarih */}
             <p className="text-sm text-white md:text-gray-600 mb-4">
               <span className="font-semibold">Yazar:</span>{' '}
-              <a href={`/user/${data.user._id}`}>{data.user?.username || 'Bilinmiyor'}</a>
+              <NavLink to={`/user/${data.user._id}`}>
+                {data.user?.username || 'Bilinmiyor'}
+              </NavLink>
             </p>
             <p className="text-sm text-white md:text-gray-600 mb-6">
               <span className="font-semibold">Tarih:</span>{' '}
