@@ -15,6 +15,7 @@ import { useDeleteBlogMutation, useDeleteCommentMutation } from '../../store/api
 import ComplaintForm from '../Complaint/ComplaintForm';
 import ComplaintForComment from "../Complaint/ComplaintForComment";
 import CustomCodeBlock from './CustomCodeBlock';
+import { NavLink } from 'react-router-dom';
 
 
 const BlogDetail = () => {
@@ -196,28 +197,28 @@ const BlogDetail = () => {
             {/* Kategoriler */}
             <div className="mt-6">
               <div className='flex items-center gap-2'>
-              <span className="text-gray-500 text-sm font-semibold">Kategoriler:</span>
-              <ul className="flex flex-wrap gap-2 mt-1">
-                {Array.isArray(data.categories) && data.categories.length > 0 ? (
-                  data.categories.map((category, index) => (
-                    <li
-                      key={index}
-                      className="bg-gray-400 text-xs text-white py-1 px-2 rounded-full"
-                    >
-                      {category.name}
-                    </li>
-                  ))
-                ) : (
-                  <li className="text-gray-500 text-xs">Kategori bulunamadı</li>
-                )}
-              </ul>
+                <span className="text-gray-500 text-sm font-semibold">Kategoriler:</span>
+                <ul className="flex flex-wrap gap-2 mt-1">
+                  {Array.isArray(data.categories) && data.categories.length > 0 ? (
+                    data.categories.map((category, index) => (
+                      <li
+                        key={index}
+                        className="bg-gray-400 text-xs text-white py-1 px-2 rounded-full"
+                      >
+                        {category.name}
+                      </li>
+                    ))
+                  ) : (
+                    <li className="text-gray-500 text-xs">Kategori bulunamadı</li>
+                  )}
+                </ul>
               </div>
-              
+
               <div className='absolute  bottom-12 ikon flex items-center gap-x-4 text-lg md:text-3xl mt-4 text-white font-light md:text-slate-800'>
-                <FaShareAlt/>
-                <AiFillInstagram/>
-                <IoLogoWhatsapp/>
-                <FaSquareXTwitter/>
+                <FaShareAlt />
+                <AiFillInstagram />
+                <IoLogoWhatsapp />
+                <FaSquareXTwitter />
               </div>
             </div>
 
@@ -289,7 +290,7 @@ const BlogDetail = () => {
 
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md w-full md:w-1/2 m-auto pt-3 mt-8">
+          <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md w-full md:w-1/2 m-auto pt-3 mt-8">
             <label
               htmlFor="commentContent"
               className="block text-lg font-semibold text-gray-700 mb-2 "
@@ -324,14 +325,14 @@ const BlogDetail = () => {
                 data.comment.map((comment) => (
                   <div key={comment._id} className="bg-gray-100 p-2 md:p-4 md:rounded-lg shadow-sm border-b border-black md:border-none">
                     <div className="flex items-center gap-2 mb-2">
-                    <div className='flex justify-start items-center p-1'>
-                     {comment.user.profilePicture ?<img
-                                             src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${comment.user.profilePicture || 'default.png'}`}
-                                             alt={comment.user.profilePicture}
-                                             className="w-10 h-10 rounded-full mr-3 object-cover"
-                                           /> : <GiPlagueDoctorProfile className='w-10 h-10 rounded-full mr-3 object-cover'/> }
-                       
-                        </div>
+                      <div className='flex justify-start items-center p-1'>
+                        {comment.user.profilePicture ? <img
+                          src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${comment.user.profilePicture || 'default.png'}`}
+                          alt={comment.user.profilePicture}
+                          className="w-10 h-10 rounded-full mr-3 object-cover"
+                        /> : <GiPlagueDoctorProfile className='w-10 h-10 rounded-full mr-3 object-cover' />}
+
+                      </div>
                       <span className="text-gray-700 font-semibold">{comment.user?.username}</span>
                       <span className="text-gray-500 text-sm">{new Date(comment.createdAt).toLocaleDateString()}</span>
                     </div>
@@ -391,15 +392,20 @@ const BlogDetail = () => {
                         className="flex justify-around items-center   gap-x-4 shadow-sm hover:bg-gradient-to-r from-slate-600 to-slate-800 transition border-b-[0.2px] border-white"
                       >
                         <div className='flex justify-start items-center p-1'>
-                     {like.profilePicture ?<img
-                                             src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${like.profilePicture || 'default.png'}`}
-                                             alt={like.username}
-                                             className="w-10 h-10 rounded-full mr-3 object-cover"
-                                           /> : <GiPlagueDoctorProfile className='w-10 h-10 rounded-full mr-3 object-cover'/> }
+                          {like.profilePicture ? <img
+                            src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${like.profilePicture || 'default.png'}`}
+                            alt={like.username}
+                            className="w-10 h-10 rounded-full mr-3 object-cover"
+                          /> : <GiPlagueDoctorProfile className='w-10 h-10 rounded-full mr-3 object-cover' />}
                           <h1 className="text-base md:text-lg font-medium text-white">{like.username}</h1>
                         </div>
 
-                        <a className='p-2 rounded-lg text-white text-nowrap text-sm shadow-lg' href={`/user/${like._id}`}>Profili Gör</a>
+                        <NavLink
+                          to={`/user/${like._id}`}
+                          className="p-2 rounded-lg text-white text-nowrap text-sm shadow-lg hover:bg-gray-800 transition duration-300"
+                        >
+                          Profili Gör
+                        </NavLink>
                       </div>
                     ))}
                   </div>

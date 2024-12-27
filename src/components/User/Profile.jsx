@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { useFollowUserMutation, useGetUserByIdQuery } from '../../store/apis/userApi';
 import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -199,14 +199,14 @@ const Profile = () => {
 
                       <span>{user.username}</span>
                     </div>
-                    <Link
+                    <NavLink
                       to={`/user/${user._id}`}
                       className="text-blue-500 hover:underline text-sm"
                       onClick={handleModalClose}
 
                     >
                       Profile Git
-                    </Link>
+                    </NavLink>
                   </li>
                 ))}
               </ul>
