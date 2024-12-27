@@ -1,0 +1,5 @@
+/* /index.html 200
+/blog/:id /blogDetail.html 200
+/user/:id /profile.html 200
+/admin/users /fetchUser.html 200
+/* /404.html 404
