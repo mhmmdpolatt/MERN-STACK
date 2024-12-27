@@ -9,8 +9,7 @@ import { FaRegComment } from "react-icons/fa";
 
 const FollowingBLogs = () => {
     const { data, isLoading, error } = useGetFollowingBlogsQuery();
-    console.log("Kullanıcının Takip Ettiklerinin Gönderileri", data);
-    console.log(useGetFollowingBlogsQuery);
+  
 
   
 ;

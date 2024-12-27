@@ -7,8 +7,7 @@ import { FaRegComment } from "react-icons/fa";
 
 const RandomBLog = () => {
     const { data: randomCategories, isLoading: loadingRandom,error } = useGetBlogQuery({ categories: 'random', limit: 4 });
-    console.log("RANDOM",useGetBlogQuery({ categories: 'random', limit: 4 }));
-    
+
 
     if (loadingRandom) {
         return <h1>Yükleniyor</h1>

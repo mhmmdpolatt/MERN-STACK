@@ -1,14 +1,15 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // CSS dosyasını unutmayın
-import { NavLink } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import { useAllBlogQuery } from "../../store/apis/blogApi";
 
 const BlogSliderAQ = () => {
     const { data: blogs, isLoading, error } = useAllBlogQuery();
-  
-    
+
+
+
+
     return (
         <div className=" p-0 md:p-1 bg-white  ">
             <h1 className="mx-auto text-center text-3xl font-bold text-slate-900">Senin İçin </h1>
@@ -17,7 +18,7 @@ const BlogSliderAQ = () => {
                 width: "75%",
                 margin: "auto",
                 marginTop: "5px",
-                marginBottom:"8px"
+                marginBottom: "8px"
 
             }}></div>
             {/* <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Öne Çıkan Bloglar</h2> */}
@@ -51,16 +52,12 @@ const BlogSliderAQ = () => {
                         {/* Başlık ve İçerik */}
                         <div className="absolute  top-1/3 md:top-1/4 left-10 text-left">
                             {/* Başlık */}
-                            <h3
-                                className=" text-2xl md:text-4xl font-extrabold text-white mb-4 drop-shadow-lg"
-                                dangerouslySetInnerHTML={{
-                                    __html: (
-                                        <NavLink to={`/blog/${blogs._id}`} className="hover:underline">
-                                          {blogs.title}
-                                        </NavLink>
-                                      ),
-                                }}
-                            ></h3>
+                            <h3 className="font-bold text-3xl mb-6 text-white">
+
+                                <Link to={`/blog/${blog._id}`}>{blog.title}</Link>
+                            </h3>
+
+
 
                             {/* İçerik */}
                             <p

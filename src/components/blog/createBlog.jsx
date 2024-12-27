@@ -72,7 +72,7 @@ const CreateBlog = () => {
     try {
       const response = await createBlog(formData).unwrap();
       alert('Blog başarıyla oluşturuldu!');
-      navigate("/user/")
+      navigate("/")
       handleReset(); // Formu sıfırla
       console.log(response);
     } catch (err) {

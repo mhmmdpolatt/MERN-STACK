@@ -39,8 +39,7 @@ const BlogDetail = () => {
   const [showModal, setShowModal] = useState(false);
   const [showModalForComment, setShowModalForComment] = useState(false)
 
-  console.log("CURRENTUSER", currentUser);
-  console.log("DATA", data)
+  
 
 
 
@@ -51,7 +50,7 @@ const BlogDetail = () => {
 
   const handleIconClickForComment = () => {
     setShowModalForComment(!showModalForComment)
-    console.log("showModalForComment", showModalForComment);
+    
 
   }
 

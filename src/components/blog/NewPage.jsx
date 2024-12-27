@@ -11,7 +11,7 @@ const NewPage = () => {
     console.log("BLOGS", useAllBlogQuery());
     const { data: blog, isLoading: load, error: eror } = useAllBlogQuery();
     const { data, isLoading, error } = useGetCategoryQuery();
-    console.log("KATEGORİELR", data);
+
     const [searchTerm, setSearchTerm] = useState('')
 
     const [filteredCategory, setFilteredCategory] = useState(null); // Seçili kategoriyi tutan state

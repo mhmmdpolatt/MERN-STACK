@@ -26,14 +26,6 @@ const HomePage = () => {
     const { data, isLoading, isError } = useAllBlogQuery();;
 
     useEffect(() => {
-        if (isError) {
-            console.error("Veri hatası:", isError);
-        }
-        if (!isLoading && !isError && data) {
-            console.log("Blog Data:", data);
-        }
-    }, [isLoading, isError, data]);
-    useEffect(() => {
         if (data && !isLoading) {
             if (searchTerm.trim() === "") {
                 setFilteredData(data); // Arama terimi boşsa tüm datayı göster.
@@ -47,7 +39,7 @@ const HomePage = () => {
                 const fuse = new Fuse(data, options);
                 const result = fuse.search(searchTerm);
                 setFilteredData(result.map((res) => res.item));
-                console.log("FİLTEREDDAATA", filteredData);
+                
                 // Fuse sonuçlarından item'ları al.
             }
         }

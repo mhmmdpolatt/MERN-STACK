@@ -21,8 +21,7 @@ const Profile = () => {
   const { data:allBlog, isLoading:load, isError } = useAllBlogQuery();
   const currentUser = useSelector((state) => state.auth.user)
   // console.log("CURRENTUSER", currentUser)
-  console.log("BEĞENDİĞİ", data);
-  console.log("TÜM BLOGLAR",allBlog);
+
   
 
   const [isVisit, setisVisit] = useState(false)
@@ -53,15 +52,15 @@ const Profile = () => {
     if (currentUser) {
       if (currentUser._id == id) {
         setisVisit(false);
-        console.log("isVisit", isVisit);
+       
 
       } else {
         setisVisit(true)
-        console.log("isVisit", isVisit);
+        
       }
     } else {
       setisVisit(true)
-      console.log("Kullanıcı Girişi Olmamış");
+   
 
     }
   }, [isVisit])
