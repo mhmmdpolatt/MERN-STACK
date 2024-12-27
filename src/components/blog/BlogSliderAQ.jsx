@@ -7,6 +7,7 @@ import { useAllBlogQuery } from "../../store/apis/blogApi";
 
 const BlogSliderAQ = () => {
     const { data: blogs, isLoading, error } = useAllBlogQuery();
+  
     
     return (
         <div className=" p-0 md:p-1 bg-white  ">
@@ -54,8 +55,8 @@ const BlogSliderAQ = () => {
                                 className=" text-2xl md:text-4xl font-extrabold text-white mb-4 drop-shadow-lg"
                                 dangerouslySetInnerHTML={{
                                     __html: (
-                                        <NavLink to={`/blog/${blog._id}`} className="hover:underline">
-                                          {blog.title}
+                                        <NavLink to={`/blog/${blogs._id}`} className="hover:underline">
+                                          {blogs.title}
                                         </NavLink>
                                       ),
                                 }}
