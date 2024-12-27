@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDeleteUserMutation, useGetUsersQuery, useUpdateUserRoleMutation } from '../../store/apis/adminApi';
 import { GiPlagueDoctorProfile } from "react-icons/gi";
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 const FetchUser = () => {
   const { data: users, isLoading, error, refetch } = useGetUsersQuery();
@@ -81,7 +82,7 @@ const FetchUser = () => {
                   <tr key={user._id} className="hover:bg-gray-50">
                     <td className="px-4 py-2 border-b">
                       {user.profilePicture ? (<img
-                        src={`http://localhost:5000/${user.profilePicture}`}
+                        src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${user.profilePicture}`}
                         alt="Profile"
                         className="w-12 h-12 rounded-full object-cover shadow-2xl"
                       />) : (
@@ -112,10 +113,10 @@ const FetchUser = () => {
                         {user.role == 'admin' || user.role == 'yönetici' ? 'Yöneticilikten Çıkar' : 'Yönetici Yap'}
                       </button>
                       <button
-                        onClick={() => handleMakeAdmin(user._id)}
+                        
                         className="px-4 mx-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none"
                       >
-                        Profiline Git
+                        <NavLink to={`/user/${user._id}`}>Profile Git</NavLink>
                       </button>
                     </td>
                   </tr>

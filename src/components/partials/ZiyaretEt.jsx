@@ -27,7 +27,7 @@ const ZiyaretEt = () => {
 
             <div className="flex flex-wrap justify-center  gap-6 mt-6">
                 {shuffledUsers.map((user) => (
-                    <div key={user._id} className="bg-gradient-to-r from-slate-600 to-slate-700  text-white p-4 shadow-xl rounded-lg w-auto gap-x-3 flex items-center justify-between">
+                    <div key={user._id} className="bg-gradient-to-r from-slate-600 to-slate-700  text-white p-4 shadow-xl rounded-lg  gap-x-3 flex items-center justify-between w-[80vw] md:w-[18vw]">
                         {/* Profil Resmi ve Kullanıcı Adı */}
                         <div className="flex items-center  gap-4">
                             <div className="w-16 h-16 bg-gray-200 rounded-full overflow-hidden">
@@ -47,7 +47,7 @@ const ZiyaretEt = () => {
                         </div>
 
                         {/* Ziyaret Et Butonu */}
-                        <button className="bg-gradient-to-r from-slate-600 to-slate-700 text-white p-2 rounded-md text-xs"> <NavLink to={`/user/${user._id}`} className="p-2 rounded-lg text-white text-nowrap text-sm shadow-lg">
+                        <button className="bg-gradient-to-r from-slate-600 to-slate-700 text-white p-2 rounded-md text-xs"> <NavLink to={`/user/${user._id}`} className="p-2 rounded-lg text-white text-nowrap w-full md:w-[33vw] text-sm shadow-lg">
                             Ziyaret
                         </NavLink></button>
                     </div>

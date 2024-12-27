@@ -84,7 +84,7 @@ const HomePage = () => {
                                 <div className='bg-black bg-opacity-50 w-full h-full z-50'>
 
                                     <div className={`absolute md:fixed top-full left-0 w-full  h-[50vh] overflow-y-auto ${filteredData.length > 2 ? 'md:h-[26vh] ' :
-                                        "h-[8vh]"} bg-gradient-to-r from-slate-600 to-slate-700   z-50 flex flex-col items-baseline`} >
+                                        "h-[12vh]"} bg-gradient-to-r from-slate-600 to-slate-700   z-50 flex flex-col items-baseline`} >
                                         <p className='text-center text-xs underline mx-auto pt-1'>Aramanızla Eşleşen {filteredData.length}  Sonuç</p>
                                         {filteredData?.map((blog) => (
                                             <div className='p-2 flex justify-around items-center border-w w-full hover:bg-slate-900 border-b border-white' key={blog._id}>

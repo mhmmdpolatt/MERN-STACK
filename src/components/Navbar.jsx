@@ -18,7 +18,7 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const { user } = useSelector((state) => state.auth || { user: null }); // auth state'inden user bilgisi alınıyor
-    console.log("USER: ", user);
+    
     const dispatch = useDispatch();
     const handleLogout = () => {
         dispatch(logout())
@@ -48,7 +48,8 @@ const Navbar = () => {
                     <h1>MyBlog</h1>
                 </div>
                 {user ? (<div className="block md:hidden">
-                    <a href={`/user/${user._id}`} ><IoMdPerson size={25} /></a>
+                   
+                    <NavLink to={`/user/${user._id}`}><IoMdPerson size={25} /></NavLink>
 
                 </div>) : ("")}
                 {/* Profil Butonu */}

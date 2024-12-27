@@ -333,19 +333,21 @@ const Profile = () => {
                       }} /> */}
                   </div>
                   {selectedTab !== 'liked' && (
-                    <div className="flex justify-end p-2">
+                    <div className={`${isVisit ? "hidden" :""} flex justify-end p-2`}>
+                     
                       <button
                         className="bg-slate-800 text-white p-2 mr-3 rounded-xl"
                         onClick={() => handleDelete(blog._id)}
                       >
-                        Kaldır
+                         {isVisit ? "" :"Kaldır" }
                       </button>
                       {selectedTab === 'active' && (
                         <button
-                          className="bg-slate-800 text-white p-2 mr-3 rounded-xl"
+                          className={` bg-slate-800 text-white p-2 mr-3 rounded-xl `}
                           onClick={() => handleArchive(blog._id)}
                         >
-                          Arşivle
+                          {isVisit ? "" :"Arşivle" }
+                          
                         </button>
                       )}
                     </div>
