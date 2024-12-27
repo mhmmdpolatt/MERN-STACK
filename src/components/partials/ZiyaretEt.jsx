@@ -2,7 +2,7 @@ import React from 'react'
 import { useFetchUsersQuery } from '../../store/apis/userApi'
 import { GiPlagueDoctorProfile } from "react-icons/gi";
 
-
+import { NavLink } from 'react-router-dom';
 const ZiyaretEt = () => {
     const { data, isLoading, error } = useFetchUsersQuery();
 
@@ -24,7 +24,7 @@ const ZiyaretEt = () => {
     return (
         <div className='bg-white'>
             <h2 className="text-center text-xl font-semibold">Takip Etmeye Başlayıp AnaSayfanı Zenginleştirebiliriz</h2>
-           
+
             <div className="flex flex-wrap justify-center  gap-6 mt-6">
                 {shuffledUsers.map((user) => (
                     <div key={user._id} className="bg-gradient-to-r from-slate-600 to-slate-700  text-white p-4 shadow-xl rounded-lg w-auto gap-x-3 flex items-center justify-between">
@@ -38,7 +38,7 @@ const ZiyaretEt = () => {
                                         className="w-full h-full object-cover"
                                     />
                                 ) : (
-                                    <GiPlagueDoctorProfile className='w-1/2 h-full rounded-full mx-auto my-auto object-cover text-lg text-slate-800'/>
+                                    <GiPlagueDoctorProfile className='w-1/2 h-full rounded-full mx-auto my-auto object-cover text-lg text-slate-800' />
                                 )}
                             </div>
 
@@ -47,7 +47,9 @@ const ZiyaretEt = () => {
                         </div>
 
                         {/* Ziyaret Et Butonu */}
-                        <button className="bg-gradient-to-r from-slate-600 to-slate-700 text-white p-2 rounded-md text-xs"> <a href={`/user/${user._id}`}>Ziyaret</a></button>
+                        <button className="bg-gradient-to-r from-slate-600 to-slate-700 text-white p-2 rounded-md text-xs"> <NavLink to={`/user/${user._id}`} className="p-2 rounded-lg text-white text-nowrap text-sm shadow-lg">
+                            Ziyaret
+                        </NavLink></button>
                     </div>
                 ))}
             </div>

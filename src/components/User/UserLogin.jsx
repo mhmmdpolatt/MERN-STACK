@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setCredentials } from '../../features/auth/authSlice'
 import { useNavigate } from 'react-router-dom'
-
+import { NavLink } from 'react-router-dom'
 const UserLogin = () => {
     const dispatch = useDispatch();
     const [formData, setFormData] = useState({ email: '', password: '' });
@@ -108,7 +108,9 @@ const UserLogin = () => {
                                 required
                             />
                         </div>
-                        <span className='text-white'>Hesabınız Yok Mu <a href="/register" className='underline'> Kayıt Oluştur</a></span>
+                        <span className='text-white'>Hesabınız Yok Mu <NavLink to="/register" className="underline">
+                            Kayıt Oluştur
+                        </NavLink></span>
                         <button
                             type="submit"
                             className="w-full mt-4 p-2 rounded-lg font-semibold text-white bg-[#774a3a] hover:bg-[#5e3f34] transition duration-200 ease-in-out"

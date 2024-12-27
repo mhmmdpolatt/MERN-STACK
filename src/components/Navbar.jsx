@@ -65,30 +65,18 @@ const Navbar = () => {
                         </button>
                         {adminDropdownOpen && (
                             <div className="absolute bg-white text-gray-800 rounded shadow-lg mt-2 w-48">
-                                <a
-                                    href="/admin/users"
-                                    className="block px-4 py-2 hover:bg-gray-100"
-                                >
+                                <NavLink to="/admin/users" className="block px-4 py-2 hover:bg-gray-100">
                                     Kullanıcılar
-                                </a>
-                                <a
-                                    href="/admin/blogs"
-                                    className="block px-4 py-2 hover:bg-gray-100"
-                                >
+                                </NavLink>
+                                <NavLink to="/admin/blogs" className="block px-4 py-2 hover:bg-gray-100">
                                     Bloglar
-                                </a>
-                                <a
-                                    href="/admin/reports"
-                                    className="block px-4 py-2 hover:bg-gray-100"
-                                >
+                                </NavLink>
+                                <NavLink to="/admin/reports" className="block px-4 py-2 hover:bg-gray-100">
                                     Şikayetler
-                                </a>
-                                <a
-                                    href="/admin/roles"
-                                    className="block px-4 py-2 hover:bg-gray-100"
-                                >
+                                </NavLink>
+                                <NavLink to="/admin/roles" className="block px-4 py-2 hover:bg-gray-100">
                                     Roller
-                                </a>
+                                </NavLink>
                             </div>
                         )}
                     </div>
