@@ -3,7 +3,7 @@
 /login /login 200
 /blog-add /blog-add 200
 /blog/:id /blog-detail/:id 200
-/user/:id /profile/:id 200
+/user/:id /profile/:id.html 200
 /blogs /new-page 200
 /profile/edit/:id /profile-edit/:id 200
 /admin/users /admin-users 200

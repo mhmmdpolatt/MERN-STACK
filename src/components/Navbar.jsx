@@ -177,12 +177,14 @@ const Navbar = () => {
                                 </button>
                             </div>
                         ) : (
-                            <a
+                            <div> <a
                                 href="/register"
                                 className="hover:text-purple-400 transition duration-300"
                             >
-                                Login/Sign
+                                Kayıt Ol
                             </a>
+                                <a href="/login">Giriş</a></div>
+
                         )}
                     </div>
                 </div>
