@@ -2,27 +2,26 @@ import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './index.css'
-import User from './components/User'
+
 import Navbar from './components/Navbar'
 import UserRegister from './components/User/UserRegister'
 import UserLogin from './components/User/UserLogin';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setCredentials } from './features/auth/authSlice';
-import Header from './components/partials/header';
-import { useGetCategoryQuery } from './store/apis/blogApi';
+
 import CreateBlog from './components/blog/createBlog';
-import GetBlog from './components/blog/getBlog';
+
 import BlogDetail from './components/blog/BlogDetail';
 import Profile from './components/User/Profile';
 import NewPage from './components/blog/NewPage';
 import HomePage from './components/HomePage';
 import ProfileEdit from './components/User/ProfileEdit';
-import Footer from './components/partials/footer';
-import fetchUser from './components/admin/fetchUser';
+
 import FetchUser from './components/admin/fetchUser';
 import ComplaintForm from './components/Complaint/ComplaintForm';
 import AdminReports from './components/admin/adminReports';
+import Footerr from './components/partials/Footerr';
 
 function App() {
   const dispatch = useDispatch();
@@ -73,7 +72,7 @@ function App() {
         </Routes>
       </Router>
 
-      <Footer />
+      <Footerr/>
 
     </>
   )

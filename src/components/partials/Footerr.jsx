@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Footer = () => {
+const Footerr = () => {
     return (
         <div className="relative bottom-0 bg-gradient-to-r from-slate-600 to-slate-800 text-white py-6 mt-16 w-full">
             <div className="container mx-auto text-center">
@@ -11,4 +11,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default Footerr
