@@ -1,36 +1,53 @@
-MERN Stack Blog Uygulaması
-Bu proje, MERN Stack (MongoDB, Express.js, React.js, Node.js) kullanılarak geliştirilmiş bir blog platformudur. Kullanıcılar için etkileşimli bir sosyal medya deneyimi sunmayı amaçlar.
-Proje linki = https://myblog-react-mdpol.netlify.app/ 
-Bu Linkten Siteye Erişim Sağlayabilirsiniz
 
-Kullanılan Teknolojiler
-Frontend: React.js (React Router, Redux Toolkit Query ve Hooklar)
-Backend: Node.js, Express.js
-Veritabanı: MongoDB (Mongoose)
-Diğer: TailwindCSS
-Proje Hedefleri
-API yönetimi ve veri modelleme üzerine pratik yapmak.
-RESTful API tasarımı ve optimizasyonu.
-Frontend ve backend entegrasyonunu güçlendirmek.
+[**Projeyi Görüntüle 🚀**](https://myblog-react-mdpol.netlify.app/)
 
-Özellikler
-Kullanıcı Yönetimi:
-Kullanıcı kaydı ve giriş.
-Profil oluşturma ve düzenleme.
-Sosyal Etkileşim:
-Gönderi oluşturma, beğenme ve yorum yapma.
-Kullanıcılar arasında takip etme.
-Dinamik İçerik:
-Kullanıcı tercihine göre özelleştirilmiş içerik sunumu.
-Modern Arayüz:
-Kullanıcı dostu bir tasarım ve responsive yapı.
-Kurulum ve Çalıştırma
+## 📚 Proje Hakkında
+**MyBlog**, modern bir **MERN Stack** uygulamasıdır. Bu projede kullanıcılar:
 
-# React + Vite
+## 🔧 Kullanılan Teknolojiler
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **Frontend:** React, Tailwind CSS, React Router,Redux Toolkit Query ,Hooks
+- **Backend:** Node.js, Express.js, MongoDB
+- **Authentication:** JWT (JSON Web Tokens)
+- **Deployment:** Netlify (Frontend), Heroku (Backend)
 
-Currently, two official plugins are available:
+- 📝 Gönderiler oluşturabilir, beğenebilir ve yorum yapabilir.
+- 📋 Kendi profillerini oluşturabilir ve düzenleyebilir.
+- 👥 Kullanıcıları takip ederek içerik akışlarını özelleştirebilir.
+- 🎨 Özelleştirilmiş içerik önerileri alabilir.
+- Resposive Tasarım Mobil Cihazlarla Uyumlu
+  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚙️ Özellikler
+
+### Kullanıcı İşlemleri
+- 🔐 Kullanıcı kayıt ve giriş.
+- 🖋 Profil düzenleme.
+- 👣 Takip etme ve takipçi yönetimi.
+
+### Gönderi İşlemleri
+- 📝 Blog gönderisi paylaşma.
+- ❤️ Gönderi beğenme ve yorum yapma.
+
+### Admin Paneli
+- 🛠 Kullanıcıları yönetme.
+- 📋 Şikayet raporlarını inceleme.
+
+## 📷 Ekran Görüntüleri
+
+### Ana Sayfa
+![Ana Sayfa](![Ekran Görüntüsü (1)](https://github.com/user-attachments/assets/4eb6b2cd-e28f-44c5-a5ac-65568a86248a)
+)
+
+### Kullanıcı Profili
+![Kullanıcı Profili](![WhatsApp Görsel 2024-12-27 saat 23 33 25_8706ab4d](https://github.com/user-attachments/assets/2baf5393-f1ff-42aa-a69d-db8966d02a45)
+)
+
+
+
+## 🔧 Kullanılan Teknolojiler
+
+- **Frontend:** React, Tailwind CSS, React Router
+- **Backend:** Node.js, Express.js, MongoDB
+- **Authentication:** JWT (JSON Web Tokens)
+- **Deployment:** Netlify (Frontend), Heroku (Backend)
