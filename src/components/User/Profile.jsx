@@ -3,7 +3,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useFollowUserMutation, useGetUserByIdQuery } from '../../store/apis/userApi';
 import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { useArchiveBlogMutation, useDeleteBlogMutation,useAllBlogQuery } from '../../store/apis/blogApi';
+import { useArchiveBlogMutation, useDeleteBlogMutation, useAllBlogQuery } from '../../store/apis/blogApi';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import ComplaintFormUser from '../Complaint/ComplaintForUser';
@@ -18,11 +18,11 @@ const Profile = () => {
   const [archiveBlog] = useArchiveBlogMutation();
   const [followUser, { isLoading: isLoadingFollower }] = useFollowUserMutation(); //MUTASYYON ENDPOİNTLERDE REFETCH KULLANILMAZ
   const [sikayetForm, setSikayetForm] = useState(false)
-  const { data:allBlog, isLoading:load, isError } = useAllBlogQuery();
+  const { data: allBlog, isLoading: load, isError } = useAllBlogQuery();
   const currentUser = useSelector((state) => state.auth.user)
   // console.log("CURRENTUSER", currentUser)
 
-  
+
 
   const [isVisit, setisVisit] = useState(false)
 
@@ -52,18 +52,25 @@ const Profile = () => {
     if (currentUser) {
       if (currentUser._id == id) {
         setisVisit(false);
-       
+
+
 
       } else {
         setisVisit(true)
-        
+
       }
     } else {
       setisVisit(true)
-   
+
+
+
+
 
     }
   }, [isVisit])
+
+
+
 
 
 
@@ -191,7 +198,7 @@ const Profile = () => {
                   <li key={user._id} className="flex items-center justify-between py-2 border-b">
                     <div className="flex items-center">
                       {user.profilePicture ? <img
-                        src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${user.profilePicture || 'default.png'}`}
+                        src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${user.profilePicture}`}
                         alt={user.username}
                         className="w-10 h-10 rounded-full mr-3 object-cover"
                       /> : <GiPlagueDoctorProfile className='w-10 h-10 rounded-full mr-3 object-cover' />}
@@ -333,21 +340,21 @@ const Profile = () => {
                       }} /> */}
                   </div>
                   {selectedTab !== 'liked' && (
-                    <div className={`${isVisit ? "hidden" :""} flex justify-end p-2`}>
-                     
+                    <div className={`${isVisit ? "hidden" : ""} flex justify-end p-2`}>
+
                       <button
                         className="bg-slate-800 text-white p-2 mr-3 rounded-xl"
                         onClick={() => handleDelete(blog._id)}
                       >
-                         {isVisit ? "" :"Kaldır" }
+                        {isVisit ? "" : "Kaldır"}
                       </button>
                       {selectedTab === 'active' && (
                         <button
                           className={` bg-slate-800 text-white p-2 mr-3 rounded-xl `}
                           onClick={() => handleArchive(blog._id)}
                         >
-                          {isVisit ? "" :"Arşivle" }
-                          
+                          {isVisit ? "" : "Arşivle"}
+
                         </button>
                       )}
                     </div>

@@ -16,11 +16,13 @@ import ComplaintForm from '../Complaint/ComplaintForm';
 import ComplaintForComment from "../Complaint/ComplaintForComment";
 import CustomCodeBlock from './CustomCodeBlock';
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const BlogDetail = () => {
 
   const currentUser = useSelector((state) => state.auth.user)
+  const navigate=useNavigate();
 
   const { id } = useParams();
   const { data, isLoading, error, refetch } = useGetBlogByIdQuery(id); // Blog verisini alıyoruz
@@ -79,7 +81,10 @@ const BlogDetail = () => {
       setAlreadyLiked(!alreadyLiked); // Beğeni durumunu tersine çeviriyoruz
       refetch();
     } catch (err) {
-      console.error("Beğeni işlemi başarısız:", err);
+      navigate("/login")
+      console.log("errorrr",err);
+      
+    
     }
   };
 

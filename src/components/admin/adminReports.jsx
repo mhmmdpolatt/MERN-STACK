@@ -1,6 +1,7 @@
 import React from 'react';
 import { useComplaintExamineMutation, useComplaintRejectedMutation, useComplaintResolvedMutation, useDeleteCompliantMutation, useFetchComplaintQuery } from '../../store/apis/adminApi';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 const AdminReports = () => {
     const { data: complaints, isLoading, error, refetch } = useFetchComplaintQuery();
     const [complaintResolved, { isLoading: load, error: err }] = useComplaintResolvedMutation();
@@ -160,11 +161,11 @@ const AdminReports = () => {
                             <td className="border px-4 py-2">{complaint.status || 'Beklemede'}</td>
                             <td className="border px-4 py-2 flex flex-col justify-center items-center
                              gap-y-1">
-                                <button onClick={() => handleExamine(complaint._id)} className="bg-blue-500 text-white px-2 py-1 rounded  text-nowrap w-full">{
+                                <button onClick={()=> handleExamine(complaint._id)}  className="bg-blue-500 text-white px-2 py-1 rounded  text-nowrap w-full">{
 
-                                    complaint.reportedBlogs ? (<a href={`/blog/${complaint.reportedBlogs._id}`}>Gönderiyi İncele</a>) :
-                                        complaint.reportedComments ? (<a href={`/blog/${complaint.reportedComments.blog}`}>Yorumu İncele</a>) :
-                                            complaint.reportedUsers ? (<a href={`/user/${complaint.reportedUsers._id}`}>Kullanıcıyı İncele</a>) : (null)
+                                    complaint.reportedBlogs ? (<NavLink to={`/blog/${complaint.reportedBlogs._id}`}>Gönderiyi İncele</NavLink>) :
+                                        complaint.reportedComments ? (<NavLink to={`/blog/${complaint.reportedComments.blog}`}>Yorumu İncele</NavLink>) :
+                                            complaint.reportedUsers ? (<NavLink  to={`/user/${complaint.reportedUsers._id}`}>Kullanıcıyı İncele</NavLink>) : (null)
 
                                 }</button>
                                 <button className={`bg-green-500 text-white px-2 py-1 rounded  w-full ${load ? "bg-black" : ""}`} onClick={() => handleResolved(complaint._id)} disabled={load}>Onayla</button>

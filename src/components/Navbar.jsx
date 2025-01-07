@@ -10,13 +10,19 @@ import { IoMdPerson } from "react-icons/io";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [adminDropdownOpen, setAdminDropdownOpen] = useState(false);
     // const userr = { username: "DemoUser", _id: 1 }; // Örnek kullanıcı verisi
     const navigate = useNavigate();
-
+    const location=useLocation();
+    if (location.pathname=="/portfolyo") {
+        return null
+    }
+    console.log("şuanki konumun" ,location.pathname);
+    
     const { user } = useSelector((state) => state.auth || { user: null }); // auth state'inden user bilgisi alınıyor
     
     const dispatch = useDispatch();

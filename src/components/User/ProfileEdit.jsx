@@ -26,9 +26,10 @@ const ProfileEdit = () => {
     
         try {
             const response = await updateUserProfile({ id, formData }).unwrap();
-            console.log('Profil güncellendi:', response);
-            navigate(`/profile/${id}`);
+            
+            navigate(`/user/${id}`);
         } catch (err) {
+            alert(err)
             console.error('Error updating profile:', err);
         }
     };

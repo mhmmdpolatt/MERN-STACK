@@ -23,3 +23,20 @@ body {
     font-weight: bold;
     text-wrap: wrap;
 }
+
+@keyframes typing {
+    0% { 
+        width: 0; 
+    }
+    100% { 
+        width: 100%; 
+    }
+}
+
+.animate-typing {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid white;
+    animation: typing 5s steps(30) infinite;
+}

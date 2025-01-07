@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css'
 
@@ -21,10 +21,10 @@ import FetchUser from './components/admin/fetchUser';
 import ComplaintForm from './components/Complaint/ComplaintForm';
 import AdminReports from './components/admin/adminReports';
 import Footerr from './components/partials/Footerr';
+import Portfolyo from './components/Portfolyo/Portfolyo';
 
 function App() {
   const dispatch = useDispatch();
-
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -44,17 +44,10 @@ function App() {
   return (
     <>
       {/* <Navbar /> */}
-      {/* <Header /> */}
-      {/* <GetBlog/> */}
-      {/* <div>
-        <h1>Categories</h1>
-        <ul>
-          {categories?.map((category) => (
-            <li key={category._id}>{category.name}</li> // Kategorilerin ismini listeliyoruz
-          ))}
-        </ul>
-      </div> */}
+
       <Router>  {/* Burada Router'ı tanımlıyoruz */}
+
+
         <Navbar />  {/* Navbar component'ı Router içinde olacak */}
         <Routes>
           <Route path="/register" element={<UserRegister />} />
@@ -68,10 +61,11 @@ function App() {
           <Route path='/admin/users' element={<FetchUser />} />
           <Route path='/admin/reports' element={<AdminReports />} />
           <Route path='/sikayet' element={<ComplaintForm />} />
+          <Route path='/portfolyo' element={<Portfolyo />} />
         </Routes>
+        <Footerr />
       </Router>
 
-      <Footerr/>
 
     </>
   )

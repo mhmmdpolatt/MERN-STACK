@@ -52,7 +52,7 @@ const HomePage = () => {
             <main className="home-container bg-gray-50 min-h-screen">
 
                 {/* Hero Bölümü */}
-                <section className="hero-section  bg-gradient-to-r from-slate-700 to-slate-950 text-white py-20">
+                <section className="hero-section  bg-gradient-to-r from-slate-700 to-slate-950 text-white py-20 ">
                     <div className="container mx-auto text-center flex flex-col justify-center items-center gap-y-2">
                         <h1 className="text-2xl md:p-3 md:text-5xl font-bold mb-4">
                             MYB'loga Hoşgeldin
@@ -140,6 +140,7 @@ const HomePage = () => {
                 {/* Footer */}
 
             </main>
+            
         </>
     );
 };
