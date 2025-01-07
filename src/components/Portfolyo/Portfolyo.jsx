@@ -2,6 +2,7 @@ import React from 'react'
 import { IoLogoNodejs } from "react-icons/io5";
 import { FaReact } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
+import { FaGithub, FaInstagram } from 'react-icons/fa';
 import { IoLogoJavascript } from "react-icons/io";
 import { SiMongodb } from "react-icons/si";
 import { FaBootstrap } from "react-icons/fa";
@@ -12,6 +13,7 @@ import MyBlog from "../../assets/myblog.png"
 import NodeShop from "../../assets/nodeshop.png"
 import Movie from "../../assets/movie.png"
 import Weather from "../../assets/weatherapp.png"
+import Music from "../../assets/music.png"
 import { useState } from 'react';
 import { FaGithubSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -35,15 +37,22 @@ const Portfolyo = () => {
     const projects = [
         { title: "MERN-Stack BlogApp", description: "A full-stack blogging application with user authentication, CRUD operations, and real-time updates.", image: MyBlog, link: "https://myblog-react-mdpol.netlify.app/#/" },
         { title: "MERN-Stack ShoppApp", description: "E-commerce platform built with MERN stack, featuring product management and user cart functionalities.", image: NodeShop, link: "https://myblog-react-mdpol.netlify.app/#/" },
-        { title: "Movie App", description: "A movie information application with search, filter, and details features.", image: Movie, link: "https://myblog-react-mdpol.netlify.app/#/" },
-        { title: "Weather App", description: "Provides real-time weather updates for specific locations.", image: Weather, link: "https://myblog-react-mdpol.netlify.app/#/" },
-        { title: "Flip Card", description: "A simple flip card component showcasing various content types.", image: Resim2, link: "https://myblog-react-mdpol.netlify.app/#/" },
+        { title: "Movie App", description: "A movie information application with search, filter, and details features.", image: Movie, link: "https://demomovieappmhmmdpolatt.netlify.app" },
+        {
+            title: "Music Player",
+            description: "JS ve Bootstrapla Geliştirlmiş Müzik Oynatma Listesi",
+            image: Music,
+            link: "https://github.com/mhmmdpolatt/MusicPlayer?tab=readme-ov-file"
+        },
+        { title: "Weather App", description: "Provides real-time weather updates for specific locations.", image: Weather, link: "https://github.com/mhmmdpolatt/FetchApi/tree/main/FETCH%20AP%C4%B0/HavaDurumu" },
+        
         {
             title: "FullRestApi",
             description: "A comprehensive REST API implementation supporting CRUD operations, authentication, and data validation.",
             image: Resim2,
-            link: "https://myblog-react-mdpol.netlify.app/#/"
-        }
+            link: "https://github.com/mhmmdpolatt/fullrestapiNodejs"
+        },
+
 
     ];
     return (
@@ -63,8 +72,8 @@ const Portfolyo = () => {
                     />
                 </div>
                 {/* Metin ve Buton Alanı */}
-                <div className="flex flex-col w-full md:p-1 items-start md:items-start">
-                    <h1 className='text-xl  md:text-5xl  text-gray-200  font-bold'>
+                <div className="flex flex-col w-full  md:p-1 items-start md:items-start">
+                    <h1 className='text-xl    md:text-5xl  text-gray-200  font-bold'>
                         <span className="animate-typing  md:whitespace-nowrap ">
                             If You Can Dream it You Can Do It !
                         </span>
@@ -87,7 +96,7 @@ const Portfolyo = () => {
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
                         >
-                            <a href="projects" className="block">
+                            <a href="https://github.com/mhmmdpolatt?tab=repositories" className="block">
                                 {isHovered ? 'Scroll Down Link Broken :/' : 'View Projects'}
                             </a>
                         </button>
@@ -193,7 +202,7 @@ const Portfolyo = () => {
 
                 <div className='projects projeler flex flex-wrap justify-center gap-8 mt-12 px-8 md:p-5'>
                     {projects.map((project, index) => (
-                        <div key={index} className="proje-card bg-gray-800 rounded-lg shadow-lg overflow-hidden w-auto  md:w-[33%] relative group">
+                        <div key={index} className="proje-card bg-gray-800 rounded-lg shadow-lg overflow-hidden w-auto  md:max-w-xs relative group">
                             <div className="relative">
                                 <img src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-t-lg" />
                                 {/* Show Image Button */}
@@ -249,10 +258,37 @@ const Portfolyo = () => {
 
 
             <footer className="bg-gray-900 text-gray-300 py-4 mt-8">
-                <div className="flex justify-center space-x-4">
-                    <h1>MDPOLAT</h1>
-                </div>
-            </footer>
+    <div className="flex justify-center space-x-4">
+        <h1 className="text-xl font-bold">MDPOLAT</h1>
+    </div>
+    <div className="flex justify-center mt-4 space-x-6">
+        {/* Github */}
+        <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-gray-100">
+            <FaGithub className="w-6 h-6" />
+        </a>
+
+        {/* LinkedIn */}
+        <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-gray-100">
+            <FaLinkedin className="w-6 h-6" />
+        </a>
+
+        {/* Instagram */}
+        <a href="https://instagram.com/your-username" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-gray-100">
+            <FaInstagram className="w-6 h-6" />
+        </a>
+
+        {/* Gmail */}
+        <a href="mailto:your-email@gmail.com" className="text-gray-300 hover:text-gray-100">
+            <SiGmail className="w-6 h-6 text-red-500" />
+        </a>
+    </div>
+
+    {/* Diğer eklemeler */}
+    <div className="flex justify-center mt-4">
+        <p className="text-sm">© 2025 MDPOLAT. All rights reserved.</p>
+    </div>
+</footer>
+
 
 
         </div>

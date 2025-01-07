@@ -18,7 +18,7 @@ const Navbar = () => {
     // const userr = { username: "DemoUser", _id: 1 }; // Örnek kullanıcı verisi
     const navigate = useNavigate();
     const location=useLocation();
-    if (location.pathname=="/portfolyo") {
+    if (location.pathname=="/portfolio") {
         return null
     }
     console.log("şuanki konumun" ,location.pathname);

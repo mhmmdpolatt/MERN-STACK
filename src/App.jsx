@@ -61,7 +61,7 @@ function App() {
           <Route path='/admin/users' element={<FetchUser />} />
           <Route path='/admin/reports' element={<AdminReports />} />
           <Route path='/sikayet' element={<ComplaintForm />} />
-          <Route path='/portfolyo' element={<Portfolyo />} />
+          <Route path='/portfolio' element={<Portfolyo />} />
         </Routes>
         <Footerr />
       </Router>

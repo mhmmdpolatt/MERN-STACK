@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 const Footerr = () => {
     const location = useLocation();
-    if (location.pathname == "/portfolyo") {
+    if (location.pathname == "/portfolio") {
         return null
     }
     console.log("şuanki konumun", location.pathname);
