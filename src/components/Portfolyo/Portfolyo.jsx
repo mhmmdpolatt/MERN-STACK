@@ -73,6 +73,7 @@ const Portfolyo = () => {
                     <h1 className="text-transparent bg-clip-text bg-gradient-to-br from-blue-400 via-purple-500 to-pink-600 font-extrabold text-3xl md:text-4xl animate-fade-in mb-4">
                         Hi, I am a Full Stack Developer
                     </h1>
+                    <p className='text-gray-300 text-lg animate-slide-in mb-4 text-left md:text-left'>My Name İs Muhammed Polat</p>
                     <p className="text-gray-300 text-lg animate-slide-in mb-4 text-left md:text-left">
                         Crafting scalable and engaging web applications with modern technologies.
                     </p>
@@ -128,7 +129,7 @@ const Portfolyo = () => {
 
 
             {/* TEKNOLOJİLER */}
-            <div className="ikonlar w-4/5 mx-auto flex flex-col items-center gap-8 mt-10 p-5 rounded-lg shadow-lg shadow-neutral-900 -hue-rotate-15">
+            <div className="ikonlar w-4/5 mx-auto flex flex-col items-center gap-8 mt-10 p-5 rounded-lg shadow-lg bg-gradient-to-br from-gray-800 to-gray-900  shadow-neutral-900 -hue-rotate-15">
                 <h1 className="text-transparent bg-clip-text bg-gradient-to-br from-blue-400 via-purple-500 to-pink-600 text-4xl font-bold text-shadow-lg">
                     What Technologies
                 </h1>
