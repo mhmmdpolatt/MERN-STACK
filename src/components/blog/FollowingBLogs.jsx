@@ -4,20 +4,21 @@ import { useGetFollowingBlogsQuery } from '../../store/apis/blogApi'
 import { Link } from 'react-router-dom';
 import { MdFavoriteBorder } from "react-icons/md";
 import { FaRegComment } from "react-icons/fa";
+import icon from "../../assets/icon.png"
 
 
 
 const FollowingBLogs = () => {
     const { data, isLoading, error } = useGetFollowingBlogsQuery();
-  
 
-  
-;
+
+
+    ;
 
 
     return (
         <>
-            
+
             <div style={{
                 border: `1px solid white`,
                 width: "75%",
@@ -25,10 +26,10 @@ const FollowingBLogs = () => {
                 marginTop: "5px"
 
             }}></div>
-             <h1 className='text-center text-slate-900 font-bold text-3xl'>Takip Ettiklerinden</h1>
+            <h1 className='text-center text-slate-900 font-bold text-3xl'>Takip Ettiklerinden</h1>
 
-            <div className={`${data?.length==0 ? "hidden" :""} flex flex-row justify-center flex-wrap items-center gap-6 gap-x-12 p-8 bg-white my-2`}>
-           
+            <div className={`${data?.length == 0 ? "hidden" : ""} flex flex-row justify-center flex-wrap items-center gap-6 gap-x-12 p-8 bg-white my-2`}>
+
                 {data && data.length > 0 ? (
                     data
                         .filter((blog) => !blog.isArchive) // Sadece isArchive: false olan blogları filtrele
@@ -38,10 +39,18 @@ const FollowingBLogs = () => {
                                 className="bg-white shadow-lg rounded-lg overflow-hidden w-[310px] h-[auto] border border-gray-200 hover:shadow-2xl"
                             >
                                 {/* Blog Resmi */}
-                                {blog.image && (
+                                {/* Blog Resmi */}
+                                {blog.image ? (
                                     <img
                                         src={`https://mern-stack-server-czfb.onrender.com/${blog.image}`}
                                         alt={blog.title}
+                                        className="w-full h-48 object-cover"
+                                        onError={(e) => { e.target.onerror = null; e.target.src = icon; }}
+                                    />
+                                ) : (
+                                    <img
+                                        src={icon}
+                                        alt="Defaults"
                                         className="w-full h-48 object-cover"
                                     />
                                 )}
@@ -65,13 +74,13 @@ const FollowingBLogs = () => {
                                     <div className="mt-4">
                                         <ul className="flex flex-wrap gap-2 mt-1">
                                             {blog.categories.map((category, index) => (
-                                                        <li
-                                                            key={index}
-                                                            className="bg-gray-600 text-xs text-white py-1 px-2 rounded-full"
-                                                        >
-                                                            {category.name}
-                                                        </li>
-                                                    ))}
+                                                <li
+                                                    key={index}
+                                                    className="bg-gray-600 text-xs text-white py-1 px-2 rounded-full"
+                                                >
+                                                    {category.name}
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
                                     <div className='flex items-center justify-between text-gray-400'>

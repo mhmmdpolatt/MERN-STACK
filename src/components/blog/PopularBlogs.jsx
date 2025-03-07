@@ -4,9 +4,11 @@ import { useGetBlogQuery } from '../../store/apis/blogApi';
 import { Link } from 'react-router-dom';
 import { MdFavoriteBorder } from "react-icons/md";
 import { FaRegComment } from "react-icons/fa";
+import icon from "../../assets/icon.png"
+
 
 const PopularBlogs = () => {
-    const { data: popularBlogs, isLoading: loadingPopular,error } = useGetBlogQuery({ sort: 'popular', limit: 4 });
+    const { data: popularBlogs, isLoading: loadingPopular, error } = useGetBlogQuery({ sort: 'popular', limit: 4 });
 
     if (loadingPopular) {
         return <h1>Yükleniyor</h1>
@@ -15,8 +17,8 @@ const PopularBlogs = () => {
     if (error) {
         return <h1>Hata</h1>
     }
-  
-    
+
+
 
     return (
         <>
@@ -29,9 +31,9 @@ const PopularBlogs = () => {
 
             }}></div>
 
-            
 
-            
+
+
 
             <div className="flex flex-row justify-center flex-wrap items-center gap-6 gap-x-12 p-8 bg-white
              my-2">
@@ -44,10 +46,17 @@ const PopularBlogs = () => {
                                 className="bg-white shadow-xl rounded-lg overflow-hidden w-[310px] h-[auto]  hover:shadow-2xl"
                             >
                                 {/* Blog Resmi */}
-                                {blog.image && (
+                                {blog.image ? (
                                     <img
                                         src={`https://mern-stack-server-czfb.onrender.com/${blog.image}`}
                                         alt={blog.title}
+                                        className="w-full h-48 object-cover"
+                                        onError={(e) => { e.target.onerror = null; e.target.src = icon; }}
+                                    />
+                                ) : (
+                                    <img
+                                        src={icon}
+                                        alt="Defaults"
                                         className="w-full h-48 object-cover"
                                     />
                                 )}

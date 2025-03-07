@@ -4,6 +4,7 @@ import { useGetBlogQuery } from '../../store/apis/blogApi';
 import { Link } from 'react-router-dom';
 import { MdFavoriteBorder } from "react-icons/md";
 import { FaRegComment } from "react-icons/fa";
+import  icon  from "../../assets/icon.png"
 
 const RandomBLog = () => {
     const { data: randomCategories, isLoading: loadingRandom,error } = useGetBlogQuery({ categories: 'random', limit: 4 });
@@ -41,14 +42,20 @@ const RandomBLog = () => {
                                 key={blog._id}
                                 className="bg-white shadow-lg rounded-lg overflow-hidden w-[310px] h-[auto] border border-gray-200 hover:shadow-2xl"
                             >
-                                {/* Blog Resmi */}
-                                {blog.image && (
-                                    <img
-                                        src={`https://mern-stack-server-czfb.onrender.com/${blog.image}`}
-                                        alt={blog.title}
-                                        className="w-full h-48 object-cover"
-                                    />
-                                )}
+                               {blog.image ? (
+                                                                    <img
+                                                                        src={`https://mern-stack-server-czfb.onrender.com/${blog.image}`}
+                                                                        alt={blog.title}
+                                                                        className="w-full h-48 object-cover"
+                                                                        onError={(e) => { e.target.onerror = null; e.target.src = icon; }}
+                                                                    />
+                                                                ) : (
+                                                                    <img
+                                                                        src={icon}
+                                                                        alt="Defaults"
+                                                                        className="w-full h-48 object-cover"
+                                                                    />
+                                                                )}
 
                                 {/* İçerik */}
                                 <div className="p-4">

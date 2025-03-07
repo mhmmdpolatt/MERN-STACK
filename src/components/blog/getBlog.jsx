@@ -3,16 +3,16 @@ import { useGetBlogQuery } from '../../store/apis/blogApi';
 import { Link } from 'react-router-dom';
 import { MdFavoriteBorder } from "react-icons/md";
 import { FaRegComment } from "react-icons/fa";
-
+import  icon  from "../../assets/icon.png"
 
 
 const GetBlog = () => {
-    const { data: latestBlogs, isLoading: loadingLatest,error } = useGetBlogQuery({ sort: 'latest', limit: 4 });
-    
-    
-   
+    const { data: latestBlogs, isLoading: loadingLatest, error } = useGetBlogQuery({ sort: 'latest', limit: 4 });
 
-    
+
+
+
+
 
 
     if (loadingLatest) {
@@ -39,7 +39,7 @@ const GetBlog = () => {
                 }}></div>
                 <div className="flex flex-row justify-center flex-wrap items-center gap-6 gap-x-12 p-8  my-2">
                     {latestBlogs && latestBlogs.length > 0 ? (
-                       latestBlogs
+                        latestBlogs
                             .filter((blog) => !blog.isArchive) // Sadece isArchive: false olan blogları filtrele
                             .map((blog) => (
                                 <div
@@ -47,10 +47,17 @@ const GetBlog = () => {
                                     className="bg-gradient-to-r from-neutral-700 to-neutral-950  rounded-lg overflow-hidden  w-[310px] h-[auto]   shadow-xl hover:shadow-2xl hover:scale-110 duration-300"
                                 >
                                     {/* Blog Resmi */}
-                                    {blog.image && (
+                                    {blog.image ? (
                                         <img
                                             src={`https://mern-stack-server-czfb.onrender.com/${blog.image}`}
                                             alt={blog.title}
+                                            className="w-full h-48 object-cover"
+                                            onError={(e) => { e.target.onerror = null; e.target.src = icon; }}
+                                        />
+                                    ) : (
+                                        <img
+                                            src={icon}
+                                            alt="Defaults"
                                             className="w-full h-48 object-cover"
                                         />
                                     )}
