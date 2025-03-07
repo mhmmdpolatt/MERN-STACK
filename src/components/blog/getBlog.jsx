@@ -49,7 +49,7 @@ const GetBlog = () => {
                                     {/* Blog Resmi */}
                                     {blog.image && (
                                         <img
-                                            src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${blog.image}`}
+                                            src={`https://mern-stack-server-czfb.onrender.com/${blog.image}`}
                                             alt={blog.title}
                                             className="w-full h-48 object-cover"
                                         />
@@ -88,7 +88,7 @@ const GetBlog = () => {
                                             <p className="text-sm text-gray-800 mt-2 flex items-center gap-2">
                                                 {blog.user?.profilePicture ? (
                                                     <img
-                                                        src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${blog.user.profilePicture}`}
+                                                        src={`https://mern-stack-server-czfb.onrender.com/${blog.user.profilePicture}`}
                                                         alt="User Profile"
                                                         className="w-8 h-8 rounded-full object-cover" // Resim boyutunu büyütüyoruz
                                                     />

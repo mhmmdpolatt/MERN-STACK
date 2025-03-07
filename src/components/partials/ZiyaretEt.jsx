@@ -33,7 +33,7 @@ const ZiyaretEt = () => {
                             <div className="w-16 h-16 bg-gray-200 rounded-full overflow-hidden">
                                 {user.profilePicture ? (
                                     <img
-                                        src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${user.profilePicture}`}
+                                        src={`https://mern-stack-server-czfb.onrender.com/${user.profilePicture}`}
                                         alt={user.username}
                                         className="w-full h-full object-cover"
                                     />

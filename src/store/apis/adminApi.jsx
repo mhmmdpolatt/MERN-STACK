@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const adminApi = createApi({
   reducerPath: "adminApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://myblog-md-e9c7810a4c96.herokuapp.com/admin',
+    baseUrl: 'https://mern-stack-server-czfb.onrender.com/admin',
     prepareHeaders: (headers) => {
       const token = localStorage.getItem('token');
       if (token) {

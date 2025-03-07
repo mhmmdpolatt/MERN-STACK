@@ -159,7 +159,7 @@ const Profile = () => {
         <div className="w-[150px] h-[150px] bg-slate-500 rounded-full bg-none mb-4 flex justify-center items-center">
           {data.profilePicture ? (
             <img
-              src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${data.profilePicture}`}
+              src={`https://mern-stack-server-czfb.onrender.com/${data.profilePicture}`}
               alt="Profile"
               className="w-full h-full object-cover rounded-full "
             />
@@ -198,7 +198,7 @@ const Profile = () => {
                   <li key={user._id} className="flex items-center justify-between py-2 border-b">
                     <div className="flex items-center">
                       {user.profilePicture ? <img
-                        src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${user.profilePicture}`}
+                        src={`https://mern-stack-server-czfb.onrender.com/${user.profilePicture}`}
                         alt={user.username}
                         className="w-10 h-10 rounded-full mr-3 object-cover"
                       /> : <GiPlagueDoctorProfile className='w-10 h-10 rounded-full mr-3 object-cover' />}
@@ -322,7 +322,7 @@ const Profile = () => {
                   className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition duration-300 w-[85vw] md:w-[25vw]"
                 >
                   <img
-                    src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${blog.image}`}
+                    src={`https://mern-stack-server-czfb.onrender.com/${blog.image}`}
                     alt={blog.title}
                     className="w-full h-48 object-cover"
                   />

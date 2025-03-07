@@ -40,7 +40,7 @@ const FollowingBLogs = () => {
                                 {/* Blog Resmi */}
                                 {blog.image && (
                                     <img
-                                        src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${blog.image}`}
+                                        src={`https://mern-stack-server-czfb.onrender.com/${blog.image}`}
                                         alt={blog.title}
                                         className="w-full h-48 object-cover"
                                     />

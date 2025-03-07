@@ -177,7 +177,7 @@ const BlogDetail = () => {
             {/* Blog Resmi */}
             {data.image && (
               <img
-                src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${data.image}`}
+                src={`https://mern-stack-server-czfb.onrender.com/${data.image}`}
                 alt={data.title}
                 className="w-auto h-64 object-cover mb-6" />
             )}

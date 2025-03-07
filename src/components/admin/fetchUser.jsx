@@ -82,7 +82,7 @@ const FetchUser = () => {
                   <tr key={user._id} className="hover:bg-gray-50">
                     <td className="px-4 py-2 border-b">
                       {user.profilePicture ? (<img
-                        src={`https://myblog-md-e9c7810a4c96.herokuapp.com/${user.profilePicture}`}
+                        src={`https://mern-stack-server-czfb.onrender.com/${user.profilePicture}`}
                         alt="Profile"
                         className="w-12 h-12 rounded-full object-cover shadow-2xl"
                       />) : (
