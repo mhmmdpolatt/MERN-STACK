@@ -50,4 +50,4 @@
 - **Frontend:** React, Tailwind CSS, React Router
 - **Backend:** Node.js, Express.js, MongoDB
 - **Authentication:** JWT (JSON Web Tokens)
-- **Deployment:** Netlify (Frontend), Heroku (Backend)
+- **Deployment:** Netlify (Frontend), Heroku (Backend).
